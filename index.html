@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Random ArtFight Character</title>
+</head>
+<body style="background:#162730;color:#f0ffff;text-align:center;font-family:monospace;padding:40px;">
+
+  <h2>Picking a random character...</h2>
+
+  <p>
+    If you are not redirected, click below:
+  </p>
+
+  <p id="fallback"></p>
+
+  <script>
+    const characters = [
+      {
+        name: "Alister",
+        url: "https://artfight.net/character/1341081.alister"
+      },
+      {
+        name: "Madison",
+        url: "https://artfight.net/character/1562766.madison"
+      },
+      {
+        name: "Arthur",
+        url: "https://artfight.net/character/1562798.arthur"
+      },
+      {
+        name: "Annaelle",
+        url: "https://artfight.net/character/9936417.annaelle"
+      },
+      {
+        name: "Sky Dodo",
+        url: "https://artfight.net/character/7810411.sky-dodo"
+      },
+      {
+        name: "Touni-Minwi",
+        url: "https://artfight.net/character/9245950.touni-minwi-the-naked-midnight"
+      }
+    ];
+
+    const pick = characters[Math.floor(Math.random() * characters.length)];
+
+    document.getElementById("fallback").innerHTML =
+      '<a href="' + pick.url + '" style="color:#f0ffff;font-size:20px;">Go to ' + pick.name + '</a>';
+
+    setTimeout(() => {
+      window.location.href = pick.url;
+    }, 500);
+  </script>
+
+</body>
+</html>
